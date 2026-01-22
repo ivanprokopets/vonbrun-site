@@ -3,6 +3,7 @@ const translations = {
     en: {
         'nav.about': 'About the company',
         'nav.products': 'Products',
+        'nav.contact': 'Contact',
         'about.subtitle': 'Vonbrun — Wholesale Distributor of European Products',
         'about.p1': 'Vonbrun operates as a wholesale distributor of a wide range of European goods, supplying partners across food, beverage and logistics sectors. Our activities are backed by the corporate strength and operational experience of Mimesis Agro Sp. z o.o., a Polish limited-liability company registered in Warsaw, Poland.',
         'about.p2': 'Mimesis Agro Sp. z o.o. was incorporated in August 2022 and is active in wholesale trade, logistics and transport support services. The company acts as an agent and intermediary in the distribution of various goods, including but not limited to consumer products and supply chain services, leveraging its network and logistics partners throughout Europe.',
