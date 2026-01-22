@@ -4,29 +4,46 @@
     padding: 0;
     box-sizing: border-box;
 }
+/* Убедимся, что body растягивается на всю высоту: */
+html, body {
+    height: 100%;
+    min-height: 100%;
+}
 
+/* Фоновое изображение для body */
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     line-height: 1.6;
     color: #1a1a1a;
-    background-color: #ffffff;
+    background: #ffffff url(./assets/background.png) no-repeat center center fixed;
+    background-size: cover;
     scroll-behavior: smooth;
 }
 
-/* Container */
+@media (max-width: 968px) {
+    body {
+        /* Иногда background-attachment: fixed глючит в мобильных браузерах,
+           так что делаем fallback на scroll */
+        background-attachment: scroll;
+    }
+}
+
 .container {
+    /* Чтобы фоновое изображение было видно под контентом, делаем контейнер чуть прозрачным */
+    background: rgba(255,255,255,0.85);
+    /* backdrop-filter: blur(4px); */
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 24px;
 }
 
-/* Header */
 .header {
-    background-color: #ffffff;
+    background-color: transparent;
     border-bottom: 1px solid #e5e5e5;
     padding: 20px 0;
 }
 
+/* Остальной код оставляем без изменений */
 .header-content {
     display: grid;
     grid-template-columns: auto 1fr auto auto;
@@ -152,7 +169,7 @@ body {
 /* Main Section */
 .main {
     padding: 50px 0;
-    background-color: #fafafa;
+    background-color: transparent; /* Убираем фон, чтобы видеть body background */
 }
 
 .statement {
@@ -174,6 +191,7 @@ body {
     max-width: 900px;
     margin: 0 auto;
     text-align: left;
+    background: transparent; /* No background so global image visible */
 }
 
 .about-title {
@@ -269,7 +287,7 @@ body {
 /* Company Data Section */
 .company-data {
     padding: 40px 0;
-    background-color: #ffffff;
+    background-color: rgba(255,255,255,0.98);
     border-top: 1px solid #e5e5e5;
     border-bottom: 1px solid #e5e5e5;
 }
@@ -337,7 +355,7 @@ body {
 /* Addresses Section */
 .addresses {
     padding: 40px 0;
-    background-color: #fafafa;
+    background-color: rgba(250,250,250,0.95);
 }
 
 .address-grid {
@@ -371,7 +389,11 @@ body {
 /* Contact Section */
 .contact {
     padding: 50px 0;
-    background-color: #ffffff;
+    /* Сделали фон прозрачнее, чтобы явно просвечивал фон body, но текст был читаем */
+    background-color: rgba(255,255,255,0.70);
+    /* Можно добавить размытие фона, как у профи */
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
 }
 
 .contact-title {
@@ -615,6 +637,13 @@ body {
         grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
         gap: 20px;
     }
+
+    .contact {
+        background-color: rgba(255,255,255,0.76);
+        backdrop-filter: blur(2px);
+        -webkit-backdrop-filter: blur(2px);
+    }
+
 }
 
 @media (max-width: 768px) {
@@ -705,6 +734,9 @@ body {
 
     .contact {
         padding: 40px 0;
+        background-color: rgba(255,255,255,0.82);
+        backdrop-filter: blur(1.5px);
+        -webkit-backdrop-filter: blur(1.5px);
     }
 
     .contact-title {
@@ -806,6 +838,9 @@ body {
 
     .contact {
         padding: 32px 0;
+        background-color: rgba(255,255,255,0.88);
+        backdrop-filter: blur(1px);
+        -webkit-backdrop-filter: blur(1px);
     }
 
     .contact-title {
@@ -857,14 +892,163 @@ body {
     height: auto;
     object-fit: contain;
     display: block;
-}
-
-/* Если хочешь, чтобы логотипы смотрелись "собраннее" */
-.product-card img {
     filter: drop-shadow(0 6px 10px rgba(0,0,0,0.10));
 }
 
 
+/* Sticky Header */
+header.header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+    /* Optional: smooth out transition when box-shadow appears */
+    transition: box-shadow 0.2s;
+}
+/* Optional: When scrolled more, stronger shadow (could add JS for 'scrolled' class) */
+/*.header.scrolled { box-shadow: 0 4px 12px rgba(0,0,0,0.1); } */
+
+/* Quick debug for footer visibility */
+footer.footer {
+    background: #fff !important; /* White background for max contrast */
+    border-top: 1px solid #eaeaea;
+    padding: 18px 0 10px 0;
+    text-align: center;
+    position: relative;
+    z-index: 10;
+}
+.footer p {
+    color: #222 !important;
+    font-size: 16px;
+    margin: 0;
+    opacity: 1 !important;
+    font-family: inherit;
+    font-weight: 400;
+    letter-spacing: 0.01em;
+    text-shadow: none !important;
+    background: none !important;
+}
+/* Cookie banner styles */
+#cookie-banner {
+    display: none; /* will show with JS if needed */
+    position: fixed;
+    left: 0; right: 0; bottom: 0;
+    background: rgba(255,255,255,0.98);
+    color: #222;
+    padding: 22px 16px 16px 16px;
+    border-top: 1px solid #ddd;
+    box-shadow: 0 -2px 8px rgba(0,0,0,0.04);
+    font-size: 16px;
+    z-index: 3000;
+    text-align: center;
+    font-family: inherit;
+}
+#cookie-banner .cookie-banner-inner {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+}
+#cookie-banner .cookie-btn {
+    margin-top: 5px;
+    padding: 8px 24px;
+    background: #26285c;
+    color: #fff;
+    border-radius: 4px;
+    border: none;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+#cookie-banner .cookie-btn:hover {
+    background: #161728;
+}
+#cookie-banner .cookie-policy-link {
+    color: #26285c;
+    text-decoration: underline;
+    margin-left: 2px;
+}
+@media (max-width: 600px) {
+    #cookie-banner .cookie-banner-inner {
+        font-size: 15px;
+    }
+    #cookie-banner {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+}
 
 
+.company-data-minimal {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 18px 32px;
+    margin-top: 24px;
+    padding: 18px 18px;
+    background: rgba(245,247,250,0.82);
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(38,40,92,0.04);
+    font-size: 15.5px;
+}
+.company-data-minimal .company-data-col {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.company-data-minimal strong {
+    display: block;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #616475;
+    letter-spacing: 0.01em;
+    font-weight: 600;
+}
+.company-data-minimal span {
+    color: #232443;
+    font-size: 16px;
+    margin-top: 1px;
+    font-weight: 500;
+}
 
+/* Reduce spacing between ID fields */
+.id-info-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4px 16px;
+    margin-top: 6px;
+}
+.id-info-row > div {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    padding-bottom: 0;
+}
+.id-info-row strong {
+    font-size: 11px;
+    color: #9697a9;
+    font-weight: 500;
+}
+.id-info-row span {
+    font-size: 15px;
+}
+
+@media (max-width: 700px) {
+    .company-data-minimal {
+        grid-template-columns: 1fr;
+        gap: 14px 0;
+        padding: 10px 6px;
+    }
+    .company-data-minimal .company-data-col {
+        gap: 10px;
+    }
+    .company-data-minimal span {
+        font-size: 15px;
+    }
+    .id-info-row {
+        grid-template-columns: 1fr 1fr;
+        gap: 2px 7px;
+    }
+}
