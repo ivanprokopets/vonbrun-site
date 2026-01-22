@@ -10,6 +10,47 @@
     <title>VONBRUN - Wholesale Distributor of European Products</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="logo.png">
+    <style>
+        /* Уберите любые sticky/fixed свойства у main-nav, header, и пр. */
+        .main-nav {
+            position: static !important;
+            top: unset !important;
+            z-index: unset !important;
+            background: none !important;
+            box-shadow: none !important;
+        }
+        .header {
+            position: static !important;
+            top: unset !important;
+            width: 100%;
+            z-index: auto;
+        }
+        /* Для лучшего отображения на телефоне */
+        @media (max-width: 600px) {
+            .main-nav {
+                flex-direction: row !important;
+                gap: 10px !important;
+                width: 100%;
+                justify-content: space-between;
+                align-items: center !important;
+            }
+            .main-nav a {
+                flex: 1 1 33%;
+                text-align: center;
+                padding-left: 0;
+                padding-right: 0;
+            }
+            .header-content {
+                flex-direction: column;
+                gap: 10px;
+                align-items: flex-start;
+            }
+            .container {
+                padding-left: 5px;
+                padding-right: 5px;
+            }
+        }
+    </style>
 </head>
 <body>
     <header class="header">
@@ -32,7 +73,7 @@
                     <button class="lang-btn active" data-lang="en">EN</button>
                     <button class="lang-btn" data-lang="pl">PL</button>
                 </div>
-                <div class="truck-placeholder" title="Trucks">🚛</div>
+                <!-- <div class="truck-placeholder" title="Trucks">🚛</div> -->
             </div>
         </div>
     </header>
