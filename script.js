@@ -26,7 +26,7 @@ const translations = {
         'form.subject': 'Subject',
         'form.message': 'Message',
         'form.submit': 'Send Message',
-        'footer.copyright': '© 2026 VONBRUN. All rights reserved.',
+        'footer.copyright': '© 2026 VONBRUN — Part of Mimesis Agro Sp. z o.o. All rights reserved.',
         'products.title': 'Our Products & Brands',
         'products.subtitle': 'We distribute a wide range of popular European brands and products'
     },
@@ -56,7 +56,7 @@ const translations = {
         'form.subject': 'Temat',
         'form.message': 'Wiadomość',
         'form.submit': 'Wyślij wiadomość',
-        'footer.copyright': '© 2026 VONBRUN. Wszelkie prawa zastrzeżone.',
+        'footer.copyright': '© 2026 2026 VONBRUN — Сzęść Mimesis Agro Sp. z o.o.. Wszelkie prawa zastrzeżone.',
         'products.title': 'Nasze Produkty i Marki',
         'products.subtitle': 'Dystrybuujemy szeroką gamę popularnych europejskich marek i produktów'
     }
