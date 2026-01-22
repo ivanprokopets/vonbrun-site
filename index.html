@@ -7,7 +7,6 @@
     <meta property="og:title" content="VONBRUN — Wholesale Distributor of European Products">
     <meta property="og:description" content="European brands distribution for partners across food, beverage and logistics.">
     <meta property="og:type" content="website">
-    <!-- <meta property="og:image" content="https://<your-domain-or-pages>/logo.png"> -->
     <title>VONBRUN - Wholesale Distributor of European Products</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="logo.png">
@@ -20,7 +19,9 @@
                     <a href="index.html">
                         <img src="logo.png" alt="VONBRUN Logo" class="logo-img">
                     </a>
-                    <h1 class="company-name"><span class="von">VON</span><span class="brun">BRUN</span></h1>
+                    <a href="index.html" class="company-name-link">
+                        <h1 class="company-name"><span class="von">VON</span><span class="brun">BRUN</span></h1>
+                    </a>
                 </div>
                 <nav class="main-nav">
                     <a href="index.html" class="active" data-i18n="nav.about">About the company</a>
@@ -58,68 +59,66 @@
                         </ul>
                     </div>
                 </div>
-                
                 <a href="#contact" class="btn-contact" data-i18n="btn.contact">Contact</a>
             </section>
         </div>
     </main>
 
-    <section class="company-data">
-        <div class="container">
-            <div class="data-row">
-                <div class="data-item-inline">
-                    <strong data-i18n="data.company">Company:</strong> <span>Mimesis Agro Sp. z o.o.</span>
-                </div>
-                <div class="data-item-inline">
-                    <strong>NIP:</strong> <span>7011101493</span>
-                </div>
-                <div class="data-item-inline">
-                    <strong>VAT:</strong> <span>PL7011101493</span>
-                </div>
-                <div class="data-item-inline">
-                    <strong>KRS:</strong> <span>0000987653</span>
-                </div>
-                <div class="data-item-inline">
-                    <strong>REGON:</strong> <span>522853112</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="addresses">
-        <div class="container">
-            <div class="address-grid">
-                <div class="address-item">
-                    <strong data-i18n="data.mainOffice">Main office:</strong>
-                    <span>ul. Hoża 86/410<br>00-682 Warszawa<br>Polska</span>
-                </div>
-                <div class="address-item">
-                    <strong data-i18n="data.warehouse">Warehouse:</strong>
-                    <span>Dobryń Duży 23a<br>21-512 Zalesie</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <section class="contact" id="contact">
         <div class="container">
             <h2 class="contact-title" data-i18n="contact.title">Contact</h2>
-            <div class="contact-wrapper">
-                <div class="contact-info">
-                    <div class="contact-item">
+            <div class="contact-wrapper" style="gap:32px;">
+                <div class="contact-info" style="gap:12px;">
+                    <div class="contact-item" style="margin-bottom:3px;">
                         <strong data-i18n="contact.email">Email:</strong>
                         <a href="mailto:info@vonbrun.com">info@vonbrun.com</a>
                     </div>
-                    <div class="contact-item">
+                    <div class="contact-item" style="margin-bottom:3px;">
                         <strong data-i18n="contact.phone">Phone:</strong>
                         <a href="tel:+48784217325">+48 784 217 325</a>
                     </div>
-                    <div class="contact-item">
+                    <div class="contact-item" style="margin-bottom:12px;">
                         <strong data-i18n="contact.whatsapp">WhatsApp:</strong>
                         <a href="https://wa.me/48784217325" target="_blank" rel="noopener noreferrer" class="whatsapp-link">
                             <span>+48 784 217 325</span>
                             <span class="whatsapp-icon">💬</span>
                         </a>
+                    </div>
+                    <div class="company-data-minimal">
+                        <div class="company-data-col">
+                            <div>
+                                <strong data-i18n="data.company">Company</strong>
+                                <span>Mimesis Agro Sp. z o.o.</span>
+                            </div>
+                            <div class="id-info-row">
+                                <div>
+                                    <strong>NIP</strong>
+                                    <span>7011101493</span>
+                                </div>
+                                <div>
+                                    <strong>REGON</strong>
+                                    <span>522853112</span>
+                                </div>
+                                <div>
+                                    <strong>KRS</strong>
+                                    <span>0000987653</span>
+                                </div>
+                                <div>
+                                    <strong>VAT</strong>
+                                    <span>PL7011101493</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="company-data-col">
+                            <div>
+                                <strong data-i18n="data.mainOffice">Main office</strong>
+                                <span>ul. Hoża 86/410<br>00-682 Warszawa<br>Polska</span>
+                            </div>
+                            <div>
+                                <strong data-i18n="data.warehouse">Warehouse</strong>
+                                <span>Dobryń Duży 23a<br>21-512 Zalesie</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <form class="contact-form" id="contact-form">
@@ -145,11 +144,21 @@
         </div>
     </section>
 
+    <div id="cookie-banner">
+        <div class="cookie-banner-inner">
+            <span>
+                This website uses cookies to ensure you get the best experience on our website.&nbsp;
+                <a href="#" class="cookie-policy-link" id="cookie-policy-link" target="_blank" rel="noopener">Learn more</a>.
+            </span>
+            <button class="cookie-btn" id="cookie-accept-btn">Accept</button>
+        </div>
+    </div>
+
     <footer class="footer">
         <div class="container">
             <p data-i18n="footer.copyright">&copy; 2026 VONBRUN — Part of Mimesis Agro Sp. z o.o. All rights reserved.</p>
         </div>
     </footer>
-    <script src="script.js" defer></script>
+    <script src="script.js"></script>
 </body>
 </html>
