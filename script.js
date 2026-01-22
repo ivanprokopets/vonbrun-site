@@ -56,7 +56,7 @@ const translations = {
         'form.subject': 'Temat',
         'form.message': 'Wiadomość',
         'form.submit': 'Wyślij wiadomość',
-        'footer.copyright': '© 2026 2026 VONBRUN — Сzęść Mimesis Agro Sp. z o.o.. Wszelkie prawa zastrzeżone.',
+        'footer.copyright': '© 2026 VONBRUN — Część Mimesis Agro Sp. z o.o. Wszelkie prawa zastrzeżone.',
         'products.title': 'Nasze Produkty i Marki',
         'products.subtitle': 'Dystrybuujemy szeroką gamę popularnych europejskich marek i produktów'
     }
@@ -130,3 +130,48 @@ if (contactForm) {
         window.location.href = mailtoLink;
     });
 }
+
+
+// Cookie banner logic with localStorage to avoid banner reappearing after navigation
+function setCookie(name, value, days) {
+    let expires = "";
+    if (days) {
+        const date = new Date();
+        date.setTime(date.getTime() + (days*24*60*60*1000));
+        expires = "; expires=" + date.toUTCString();
+    }
+    document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+}
+function getCookie(name) {
+    const nameEQ = name + "=";
+    const ca = document.cookie.split(';');
+    for(let i=0;i < ca.length;i++) {
+        let c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+}
+// Show cookie banner if not previously accepted using localStorage for persistence across navigation
+document.addEventListener('DOMContentLoaded', function() {
+    const banner = document.getElementById('cookie-banner');
+
+    // Use localStorage for better reliability than cookies for this UX
+    function userHasAcceptedCookie() {
+        // Cookie may still exist, so check both for backward compatibility
+        return localStorage.getItem('cookieConsent') === 'true' || getCookie('cookieConsent') === 'true';
+    }
+    // Show banner if not accepted yet
+    if (!userHasAcceptedCookie()) {
+        banner.style.display = 'block';
+    }
+    document.getElementById('cookie-accept-btn').onclick = function() {
+        setCookie('cookieConsent', 'true', 365);
+        localStorage.setItem('cookieConsent', 'true');
+        banner.style.display = 'none';
+    };
+    document.getElementById('cookie-policy-link').addEventListener('click', function(e){
+        e.preventDefault();
+        alert('Cookie Policy: This website uses cookies only for basic functionality and improvement. No personal data is stored.');
+    });
+});
