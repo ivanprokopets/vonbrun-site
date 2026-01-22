@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VONBRUN - Wholesale Distributor of European Products</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-section">
+                    <a href="index.html">
+                        <img src="logo.png" alt="VONBRUN Logo" class="logo-img">
+                    </a>
+                    <h1 class="company-name"><span class="von">VON</span><span class="brun">BRUN</span></h1>
+                </div>
+                <nav class="main-nav">
+                    <a href="index.html" class="active" data-i18n="nav.about">About the company</a>
+                    <a href="products.html" data-i18n="nav.products">Products</a>
+                    <a href="#contact" data-i18n="nav.contact">Contact</a>
+                </nav>
+                <div class="lang-switcher">
+                    <button class="lang-btn active" data-lang="en">EN</button>
+                    <button class="lang-btn" data-lang="pl">PL</button>
+                </div>
+                <div class="truck-placeholder" title="Trucks">🚛</div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <section class="about-section">
+                <h3 class="about-subtitle" data-i18n="about.subtitle">Vonbrun — Wholesale Distributor of European Products</h3>
+                
+                <div class="about-content">
+                    <p data-i18n="about.p1">Vonbrun operates as a wholesale distributor of a wide range of European goods, supplying partners across food, beverage and logistics sectors. Our activities are backed by the corporate strength and operational experience of Mimesis Agro Sp. z o.o., a Polish limited-liability company registered in Warsaw, Poland.</p>
+                    
+                    <p data-i18n="about.p2">Mimesis Agro Sp. z o.o. was incorporated in August 2022 and is active in wholesale trade, logistics and transport support services. The company acts as an agent and intermediary in the distribution of various goods, including but not limited to consumer products and supply chain services, leveraging its network and logistics partners throughout Europe.</p>
+                    
+                    <p data-i18n="about.p3">As part of the Mimesis corporate group, Vonbrun brings together market-oriented distribution capabilities, efficient warehouse operations, and trusted trading relationships, ensuring high availability of products and timely delivery.</p>
+                    
+                    <div class="strengths-section">
+                        <h4 class="strengths-title" data-i18n="about.strengths">Our core strengths include:</h4>
+                        <ul class="strengths-list">
+                            <li data-i18n="about.strength1">European wholesale distribution</li>
+                            <li data-i18n="about.strength2">Efficient transport and logistical coordination</li>
+                            <li data-i18n="about.strength3">Established presence and compliance within the Polish commercial register</li>
+                            <li data-i18n="about.strength4">Professional business services and customer support</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <a href="#contact" class="btn-contact" data-i18n="btn.contact">Contact</a>
+            </section>
+        </div>
+    </main>
+
+    <section class="company-data">
+        <div class="container">
+            <div class="data-row">
+                <div class="data-item-inline">
+                    <strong data-i18n="data.company">Company:</strong> <span>Mimesis Agro Sp. z o.o.</span>
+                </div>
+                <div class="data-item-inline">
+                    <strong>NIP:</strong> <span>7011101493</span>
+                </div>
+                <div class="data-item-inline">
+                    <strong>VAT:</strong> <span>PL7011101493</span>
+                </div>
+                <div class="data-item-inline">
+                    <strong>KRS:</strong> <span>0000987653</span>
+                </div>
+                <div class="data-item-inline">
+                    <strong>REGON:</strong> <span>522853112</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="addresses">
+        <div class="container">
+            <div class="address-grid">
+                <div class="address-item">
+                    <strong data-i18n="data.mainOffice">Main office:</strong>
+                    <span>ul. Hoża 86/410<br>00-682 Warszawa<br>Polska</span>
+                </div>
+                <div class="address-item">
+                    <strong data-i18n="data.warehouse">Warehouse:</strong>
+                    <span>Dobryń Duży 23a<br>21-512 Zalesie</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="contact-title" data-i18n="contact.title">Contact</h2>
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <strong data-i18n="contact.email">Email:</strong>
+                        <a href="mailto:info@vonbrun.com">info@vonbrun.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <strong data-i18n="contact.phone">Phone:</strong>
+                        <a href="tel:+48784217325">+48 784 217 325</a>
+                    </div>
+                    <div class="contact-item">
+                        <strong data-i18n="contact.whatsapp">WhatsApp:</strong>
+                        <a href="https://wa.me/48784217325" target="_blank" rel="noopener noreferrer" class="whatsapp-link">
+                            <span>+48 784 217 325</span>
+                            <span class="whatsapp-icon">💬</span>
+                        </a>
+                    </div>
+                </div>
+                <form class="contact-form" id="contact-form">
+                    <div class="form-group">
+                        <label for="name" data-i18n="form.name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" data-i18n="form.email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject" data-i18n="form.subject">Subject</label>
+                        <input type="text" id="subject" name="subject" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message" data-i18n="form.message">Message</label>
+                        <textarea id="message" name="message" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit" data-i18n="form.submit">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p data-i18n="footer.copyright">&copy; 2026 VONBRUN. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
